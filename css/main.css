@@ -1,0 +1,692 @@
+html {
+    font-size: 62.5%;
+    color: #222;
+}
+
+*::-moz-selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+*::selection {
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.block-center {
+    display: block;
+    margin: 0 auto;
+}
+
+/*
+清除浮动
+*/
+
+.clearfix:after {
+    content: ' ';
+    height: 0;
+    display: block;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+/* =======
+自定义样式页面
+======
+*/
+
+body {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    background-color: #f7f7f7;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #0ae;
+}
+
+/* ads部分样式 */
+
+.ads {
+    width: 90%;
+    padding: 2rem 0;
+}
+
+/* =======
+header样式
+======
+*/
+
+header {
+    width: 100%;
+}
+
+.top {
+    line-height: 3rem;
+    padding: 0 1.5rem;
+    background: #555;
+    color: #fff;
+    border-bottom: 1px #ecc000 solid;
+}
+
+.tel {
+    float: left;
+}
+
+.top ul {
+    margin: 0;
+    float: right;
+    font-size: 0rem
+}
+
+.top ul li a {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.top li {
+    display: inline-block;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.top li+li {
+    border-left: 1px rgb(221, 218, 218) solid;
+}
+
+.main {
+    padding: 0 2rem;
+    position: relative;
+}
+
+.main .brand {
+    float: left;
+    padding: 1rem 1.5rem;
+    line-height: 4rem;
+}
+
+.main .brand img {
+    display: inline-block;
+    height: 2rem;
+    width: auto;
+    padding: 1rem 0;
+}
+
+.main ul {
+    line-height: 4rem;
+    margin: 0;
+    float: right;
+    padding: 1.5rem 0;
+}
+
+.main ul li {
+    display: inline-block;
+    font-size: 1.6rem;
+    padding: 0 1rem;
+}
+
+@media only screen and (max-width:800px) {
+    .top li {
+        padding: 0 0.5rem;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:800px) {
+    header .top .tel, header .top ul li:nth-child(3), header .top ul li:nth-child(4) {
+        display: none;
+    }
+    .main {
+        padding: 0;
+        margin: 0;
+    }
+    .main .brand {
+        float: none;
+        padding: 0rem;
+        line-height: 0rem;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .main ul {
+        float: none;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    header .main ul li:nth-child(1) {
+        display: none;
+    }
+    header .top .tel, header .top ul li:nth-child(3), header .top ul li:nth-child(4) {
+        display: none;
+    }
+    .main .brand {
+        float: none;
+        padding: 0rem;
+        line-height: 0rem;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .main ul {
+        float: none;
+        padding: 0.2rem 0;
+        text-align: center;
+    }
+}
+
+/* ======
+footer样式
+*/
+
+footer ul li .icon {
+    display: inline-block;
+    text-indent: -999rem;
+    background: url('../img/cert1.png');
+    background-size: 466px 447px;
+    overflow: hidden;
+}
+
+footer ul li {
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+footer ul li .icon-zfywxk {
+    width: 38px;
+    height: 27px;
+    background-position: -369px -45px;
+}
+
+footer ul li .icon-pcirz {
+    width: 78px;
+    height: 27px;
+    background-position: -110px -96px;
+}
+
+footer ul li .icon-visayz {
+    width: 36px;
+    height: 27px;
+    background-position: -426px -90px;
+}
+
+footer ul li .icon-versignjmfw {
+    width: 63px;
+    height: 27px;
+    background-position: -401px -186px;
+}
+
+footer ul li .icon-dzswxhrz {
+    width: 22px;
+    height: 27px;
+    background-position: -48px -48px;
+}
+
+footer ul li .icon-bjgs {
+    width: 75px;
+    height: 27px;
+    background-position: 0px -320px;
+}
+
+footer {
+    width: 100%;
+}
+
+footer .footer-content ul {
+    padding: 0;
+}
+
+footer .footer-content, footer .footer-content p {
+    width: 90%;
+    text-align: center;
+}
+
+/* ======
+transaction部分样式
+*/
+
+.transaction {
+    width: 100%;
+    background-color: #555;
+}
+
+.trans-content {
+    max-width: 90%;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.trans-data {
+    float: left;
+    padding: 0 1rem;
+}
+
+.trans-momeny {
+    background-color: rgb(246, 248, 250);
+    border-radius: 10%;
+    font-weight: bold;
+    color: #ecc000;
+    padding: 0 0.2rem;
+}
+
+.trans-content div {
+    display: inline;
+}
+
+.trans-report {
+    float: right;
+}
+
+.trans-report a {
+    color: #fff;
+}
+
+@media only screen and (max-width:800px) {}
+
+@media only screen and (min-width:481px) and (max-width:800px) {
+    .trans-momeny {
+        background-color: initial;
+        border-radius: 0;
+        font-weight: normal;
+        color: #ecc000;
+        padding: 0 0;
+    }
+    .trans-content {
+        font-size: 1rem;
+    }
+    .trans-data {
+        float: left;
+        padding: 0 0.5rem;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .trans-momeny {
+        background-color: initial;
+        border-radius: 0;
+        font-weight: normal;
+        color: #ecc000;
+        padding: 0 0;
+    }
+    .trans-data {
+        float: none;
+        padding: 0.5rem 1rem;
+    }
+    .trans-report {
+        float: none;
+    }
+    .trans-content div {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+/* ======
+feature部分的样式
+*/
+
+.feature {
+    width: 90%;
+    padding: 0;
+    margin: 1rem auto;
+}
+
+.feature .item {
+    font-size: 0;
+}
+
+.feature .item {
+    display: inline-block;
+    width: calc(100%/3 - 3rem);
+    padding: 1rem 1rem;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    font-size: 1.4rem;
+    background-color: #fff;
+}
+
+.feature .item+.item {
+    margin-left: 1rem;
+}
+
+.feature .item h3, .feature .item p {
+    display: inline-block;
+}
+
+.feature .item p {
+    text-align: left;
+    width: 55%;
+    margin: 0;
+    padding: 0;
+}
+
+.feature .item h3 {
+    color: #ecc000;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 3.4rem;
+    top: calc(50%);
+    vertical-align: top;
+}
+
+@media only screen and (min-width:481px) and (max-width:800px) {
+    .feature .item h3, .feature .item p {
+        display: block;
+    }
+    .feature .item h3 {
+        color: #ecc000;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 2.4rem;
+        top: 0;
+        vertical-align: baseline;
+    }
+    .feature .item p {
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .feature .item h3, .feature .item p {
+        display: inline-block;
+    }
+    .feature .item h3 {
+        color: #ecc000;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 2.4rem;
+        top: 0;
+        vertical-align: baseline;
+    }
+    .feature .item p {
+        text-align: center;
+        font-size: 1rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .feature .item {
+        display: block;
+        width: 100%;
+        padding: 1rem 0rem;
+        font-size: 1.4rem;
+        margin: 0 auto;
+    }
+    .feature .item+.item {
+        margin-left: 0rem;
+    }
+}
+
+/* ======
+notice部分的样式
+*/
+
+.notice {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 90%;
+    margin: 2rem auto;
+    font-size: 1.4rem;
+    line-height: 3rem;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.notice a {
+    float: left;
+    display: inline-block;
+    width: 70%;
+    padding: 0 1rem;
+}
+
+.notice a:first-child {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.notice a:first-child:before {
+    content: '最新公告:\00a0\00a0';
+    color: #aaa;
+}
+
+.notice a span {
+    color: #999;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}
+
+.notice .more {
+    float: right;
+    width: calc(30% - 4rem);
+    text-align: center;
+    color: #ecc000;
+}
+
+@media only screen and (max-width:480px) {
+    .notice {
+        font-size: 1rem;
+    }
+}
+
+/* ======
+product部分的布局
+*/
+
+.product {
+    width: 90%;
+    -webkit-box-shadow: 0 0 4px #ccc;
+    box-shadow: 0 0 4px #ccc;
+    background-color: #c6d3e4;
+    border-top: 0.2rem #ecc000 solid;
+}
+
+.product h2, .product-content {
+    float: left;
+}
+
+.product h2 {
+    width: 30%;
+    text-align: center;
+}
+
+.product-content {
+    background-color: #fff;
+    padding: 2rem 2rem;
+    width: calc(70% - 4rem);
+    float: right;
+}
+
+.product+.product {
+    margin-top: 1rem;
+}
+
+.product-content+.product-content {
+    border-top: 0.2rem #ecc000 solid;
+}
+
+.product-item h3, .product-item div, .info p {
+    display: inline-block;
+}
+
+.product-item h3 {
+    width: 25%;
+    text-align: center;
+}
+
+.product-content .info {
+    width: 50%;
+}
+
+.product-content .info p {
+    margin: 0;
+    padding: 0;
+    width: 45%;
+    text-align: center;
+}
+
+.product-item h3 em {
+    font-size: 2rem;
+}
+
+.year-rate, .money {
+    display: block;
+    color: #ecc000;
+    font-size: 2rem;
+}
+
+.year-rate i, .money i {
+    color: #aaa;
+    font-size: 1rem;
+}
+
+.product-content .buy {
+    width: 20%;
+}
+
+.buy a {
+    padding: 0.5rem 2rem;
+    border-radius: 0.2rem;
+    background-color: #ecc000;
+    -webkit-box-shadow: 0 0 0.2rem #d1ac04;
+    box-shadow: 0 0 0.2rem #d1ac04;
+}
+
+.product h2 em {
+    display: block;
+    font-size: 1rem;
+    padding: 0.2rem 0;
+}
+
+.product-item h3 i {
+    display: block;
+}
+
+* {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+@media only screen and (max-width:480px) {
+    /* .product-item h3, .product-item div, .info p {
+        display: block;
+    } */
+    .product .buy {
+        display: block;
+        margin: 0 auto;
+    }
+    .product h2, .product-content {
+        float: none;
+        width: 100%;
+        padding: 1rem 0;
+        margin: 0 auto;
+    }
+    .product h2 em {
+        display: inline;
+    }
+    .product-content .product-item {
+        margin: 0 auto;
+    }
+    .product-content .info {
+        width: calc(75% - 1rem);
+    }
+    .product-content .buy {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width:481px) and (max-width:800px) {
+    .product h2, .product-content {
+        float: none;
+        display: block;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .product h2 em {
+        display: inline;
+    }
+}
+
+/* footer部分样式 */
+
+.footer {
+    width: 100%;
+}
+
+.footer .footer-content {
+    width: 90%;
+    text-align: center;
+}
+
+.footer-content p {
+    display: inline-block;
+    float: left;
+    text-align: center;
+}
+
+.footer-content img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.footer .footer-content ul {
+    float: right;
+    margin-right: 2rem;
+}
+
+@media only screen and(max-width:800px) {
+    .footer .footer-content .brand {
+        display: none;
+    }
+}
+
+/* 
+@media only screen and(min-width:481px) and (max-width:800px) {
+    .footer-content .brand {
+        display: none;
+    }
+} */
+
+@media only screen and (max-width:800px) {
+    .footer .footer-content .brand {
+        display: none;
+    }
+    .footer .footer-content ul {
+        float: left;
+        margin-right: 1rem;
+        padding: 0 1rem;
+        /* text-align: center; */
+    }
+}
