@@ -12,3 +12,6 @@
 > git rm --cached 是将 文件直接移除版本控制？还是回退到暂存区？
 
 > git commit --amend
+
+> git remote show remote-name 功能
+
