@@ -16,3 +16,5 @@
 > git remote show remote-name 功能
 
 > 测试分支产生分叉
+
+> 测试分支合并
