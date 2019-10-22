@@ -21,8 +21,6 @@
       + `--pretty=fuller` 增加显示了相应的时间信息。
       + `--pretty=format` 自定义 log 的显示信息，[详情](https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2)。
 
-    
-
 * 撤销操作
 
     - 撤销暂存文件发生的修改： `git reset HEAD fileName` 
@@ -83,7 +81,11 @@
 
   + 与 “fast-forward” 不一样的是：当两个分支共享一个共同的父节点时, *和之前将分支指针向前推进所不同的是，Git 将此次三方合并的结果做了一个新的快照并且自动创建一个新的提交(默认提交信息为 “Merge branch [branch-name]”)指向它(该新的提交有两个指针，分别指向两个分支)。 这个被称作一次合并提交，它的特别之处在于他有不止一个父提交。*但是当两个分支对同一个文件的操作产生差异时会产生冲突，这时候就需要手动解决冲突。  解决冲突之后需要使用命令 `git commit` 发布合并，这时候就可以产生合并记录了。当没有冲突发生时，两个分支的内容均会出现在工作目录中。
 
-* *如果并不想让远程仓库上的分支叫做 serverfix，可以运行 git push origin serverfix:awesomebranch 来将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。下一次其他协作者从服务器上抓取数据时，他们会在本地生成一个远程分支 origin/serverfix，指向服务器的 serverfix 分支的引用*。**要特别注意的一点是当抓取到新的远程跟踪分支时，本地不会自动生成一份可编辑的副本（拷贝）(也就是说本地无法对远程分支进行编辑，只能将远程分支作为父节点)。 换一句话说，这种情况下，不会有一个新的 serverfix 分支——只有一个不可以修改的 origin/serverfix 指针。** 可以运行 `git merge origin/serverfix` 将这些工作合并到当前所在的分支（这时候就可以在本地对文件进行编辑）。 如果想要在自己的 serverfix 分支上工作，可以将其建立在远程跟踪分支之上, 这会给你一个用于工作的本地分支，并且起点位于 origin/serverfix。
+  
+
+### 远程分支
+
+* *如果并不想让远程仓库上的分支叫做 serverfix，可以运行 `git push origin serverfix:awesomebranch` 来将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。下一次其他协作者从服务器上抓取数据时，他们会在本地生成一个远程分支 origin/serverfix，指向服务器的 serverfix 分支的引用*。**要特别注意的一点是当抓取到新的远程跟踪分支时，本地不会自动生成一份可编辑的副本（拷贝）(也就是说本地无法对远程分支进行编辑，只能将远程分支作为父节点)。 换一句话说，这种情况下，不会有一个新的 serverfix 分支——只有一个不可以修改的 origin/serverfix 指针。** 可以新建一个本地分支并运行 `git merge origin/serverfix` 将这些工作合并到当前所在的分支（这时候就可以在本地对文件进行编辑）。 如果想要在自己的 serverfix 分支上工作，可以将其建立在远程跟踪分支之上, 这会给你一个用于工作的本地分支，并且起点位于 origin/serverfix。
 
 ``` 
   $ git checkout -b serverfix origin/serverfix
@@ -91,6 +93,14 @@
   Switched to a new branch 'serverfix'
   
 ```
+
+* `git branch -vv` 命令列出本地分支的信息，包括分支跟踪的是远程分支的信息
+
+* *当克隆一个仓库时，它通常会自动地创建一个跟踪 origin/master 的 master 分支。 然而，如果你愿意的话可以设置其他的跟踪分支，或是一个在其他远程仓库上的跟踪分支，又或者不跟踪 master 分支。 最简单的实例就是像之前看到的那样，运行 git checkout -b [branch] [remotename]/[branch]。 这是一个十分常用的操作所以 Git 提供了 --track 快捷方式：*
+``` shell
+git checkout --track origin/serverfix
+```
+  - 如果想要将本地分支与远程分支设置为不同名字，你可以轻松地使用上一个命令增加一个不同名字的本地分支：`git checkout -b sf origin/serverfix` 现在，本地分支 sf 会自动从 origin/serverfix 拉取。
 
     
 
