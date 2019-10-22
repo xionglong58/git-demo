@@ -119,4 +119,4 @@ git checkout --track origin/serverfix
 
 + `git branch -f master HEAD~3`：*上面的命令会将 master 分支强制指向 HEAD 的第 3 级父提交*。该命令不能在 master 分支下运行，必须切换到其他分支之后再执行命令。
     
-
++ 虽然在你的本地分支中使用 `git reset` 很方便，但是这种“改写历史”的方法对大家一起使用的远程分支是无效的。为了撤销更改并分享给别人，我们需要使用 `git revert`,要撤销的提交记录后面居然多了一个新提交，该新提交则是保存了`revert` 这一操作。
