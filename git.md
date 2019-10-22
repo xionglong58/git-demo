@@ -85,7 +85,9 @@
 
 ### [远程分支](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF)
 
-* `git push origin new-branch` 当远程仓库不存在分支 `new-branch` ,则该命令会在远程创建一个分支 `new-branch`。
+* `git push origin [new-branch]` 当远程仓库不存在分支 `new-branch` ,则该命令会在远程创建一个分支 `new-branch`。
+
+* `git push origin --delete [remote-branch]` 删除远程仓库的 `remote-branch` 分支，`git branch -d [local-branch]` 该命令用于删除本地分支。
 
 * *如果并不想让远程仓库上的分支叫做 serverfix，可以运行 `git push origin serverfix:awesomebranch` 来将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。下一次其他协作者从服务器上抓取数据时，他们会在本地生成一个远程分支 origin/serverfix，指向服务器的 serverfix 分支的引用*。**要特别注意的一点是当抓取到新的远程跟踪分支时，本地不会自动生成一份可编辑的副本（拷贝）(也就是说本地无法对远程分支进行编辑，只能将远程分支作为父节点)。 换一句话说，这种情况下，不会有一个新的 serverfix 分支——只有一个不可以修改的 origin/serverfix 指针。** 可以新建一个本地分支并运行 `git merge origin/serverfix` 将这些工作合并到当前所在的分支（这时候就可以在本地对文件进行编辑）。 如果想要在自己的 serverfix 分支上工作，可以将其建立在远程跟踪分支之上, 这会给你一个用于工作的本地分支，并且起点位于 origin/serverfix。
 
@@ -108,7 +110,10 @@ git checkout --track origin/serverfix
 
 * 你可以在任意时间使用 -u 或 --set-upstream-to 选项运行 git branch 来显式地设置。 `git branch -u origin/serverfix` 。
 
-* `git push origin --delete serverfix` 删除远程仓库的 `serverfix` 分支
+### [分支-变基](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA)
+
+
+
 
     
 
