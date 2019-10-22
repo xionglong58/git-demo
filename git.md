@@ -53,7 +53,7 @@
 
 * `git log --oneline --decorate` 该命令用于查看各个分支当前所指的对象，HEAD 可以看作当前所指对象的别名
 
-*`git log --oneline --decorate --graph --all`*它会输出你的提交历史、各个分支的指向以及项目的分支分叉情况*
+* `git log --oneline --decorate --graph --all`*它会输出你的提交历史、各个分支的指向以及项目的分支分叉情况*
 
 ### [分支合并](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6)
 
@@ -83,7 +83,9 @@
 
   
 
-### 远程分支
+### [远程分支](https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF)
+
+* `git push origin new-branch` 当远程仓库不存在分支 `new-branch` ,则该命令会在远程创建一个分支 `new-branch`。
 
 * *如果并不想让远程仓库上的分支叫做 serverfix，可以运行 `git push origin serverfix:awesomebranch` 来将本地的 serverfix 分支推送到远程仓库上的 awesomebranch 分支。下一次其他协作者从服务器上抓取数据时，他们会在本地生成一个远程分支 origin/serverfix，指向服务器的 serverfix 分支的引用*。**要特别注意的一点是当抓取到新的远程跟踪分支时，本地不会自动生成一份可编辑的副本（拷贝）(也就是说本地无法对远程分支进行编辑，只能将远程分支作为父节点)。 换一句话说，这种情况下，不会有一个新的 serverfix 分支——只有一个不可以修改的 origin/serverfix 指针。** 可以新建一个本地分支并运行 `git merge origin/serverfix` 将这些工作合并到当前所在的分支（这时候就可以在本地对文件进行编辑）。 如果想要在自己的 serverfix 分支上工作，可以将其建立在远程跟踪分支之上, 这会给你一个用于工作的本地分支，并且起点位于 origin/serverfix。
 
@@ -97,10 +99,16 @@
 * `git branch -vv` 命令列出本地分支的信息，包括分支跟踪的是远程分支的信息
 
 * *当克隆一个仓库时，它通常会自动地创建一个跟踪 origin/master 的 master 分支。 然而，如果你愿意的话可以设置其他的跟踪分支，或是一个在其他远程仓库上的跟踪分支，又或者不跟踪 master 分支。 最简单的实例就是像之前看到的那样，运行 git checkout -b [branch] [remotename]/[branch]。 这是一个十分常用的操作所以 Git 提供了 --track 快捷方式：*
+
 ``` shell
 git checkout --track origin/serverfix
 ```
-  - 如果想要将本地分支与远程分支设置为不同名字，你可以轻松地使用上一个命令增加一个不同名字的本地分支：`git checkout -b sf origin/serverfix` 现在，本地分支 sf 会自动从 origin/serverfix 拉取。
+
+* 如果想要将本地分支与远程分支设置为不同名字，你可以轻松地使用上一个命令增加一个不同名字的本地分支： `git checkout -b sf origin/serverfix` 现在，本地分支 sf 会自动从 origin/serverfix 拉取。
+
+* 你可以在任意时间使用 -u 或 --set-upstream-to 选项运行 git branch 来显式地设置。 `git branch -u origin/serverfix` 。
+
+* `git push origin --delete serverfix` 删除远程仓库的 `serverfix` 分支
 
     
 
